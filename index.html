@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yebai - Main</title>
+<link rel="icon" href="images/favicon.ico" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="css/styles_yz.css" rel="stylesheet" type="text/css">
 
@@ -21,44 +22,43 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
+    
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-      
-      <a href="index.html" class="navbar-brand" id="headermain">Yebai Zhao</a></div>
-      
-    <!-- Collect the nav links, forms, and other content for toggling -->
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+<a href="index.html" class="navbar-brand" id="headermain">Yebai Zhao</a></div>
+<!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="defaultNavbar1">
       <ul class="nav navbar-nav">
-        <li><a href="curr_projects.html">Current Projects<span class="sr-only">(current)</span></a></li>
-        <li><a href="past_projects.html">Finished Projects</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="ideas.html">Ideas</a></li>
+        <li><a href="about.html">About me</a></li>
         
-        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Others<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
       </ul>
 	  <ul class="nav navbar-nav navbar-right">
-        <li><a href="about.html">About Me</a></li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Others<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Fun Stuff</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Download Resume</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Friendly Links</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->
   </div>
   <!-- /.container-fluid -->
 </nav>
-<article id="main">
-<h1>Current Status</h1>
-    <h3>HCI at RIT</h3>
-    <p>As time running to the end of my fourth semester at Rochester Institute of Technology, my course work in the master study of Human Computer Interaction is about to finish. With my creative ideas and comprehensive skills, I am looking for a Co-op as a HCI researcher or a UX developer. </p>
-    <h3>Cat Invasion!</h3>
-    <p>Being watched 24/7 by a visiting cat. </p>
-    <div class="row">
+<h1 id="headphoto">HEADING HERE</h1>
+<div id="main">
+<article>
+		
+   	  <h3>Current status: HCI at RIT</h3>
+    	<p>As time running to the end of my fourth semester at Rochester Institute of Technology, my course work in the master study of Human Computer Interaction is about to finish. With my creative ideas and comprehensive skills, I am looking for a Co-op as a HCI researcher or a UX developer. </p>
+	</article>
+
+	<div class="row" id="highlight">
       <div class="col-md-4">
         <div class="thumbnail"><img src="images/Thumbnail_Placeholder.png" alt="Thumbnail Image 1">
           <div class="caption">
@@ -76,7 +76,15 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="thumbnail"><img src="images/epicenter-1.jpg" alt="Thumbnail Image 1" width="300" height="254" class="img-thumbnail image-fill">
+        <div class="thumbnail"><img src="images/Thumbnail_Placeholder.png" alt="Thumbnail Image 1" class="img-rounded">
+          <div class="caption">
+            <h3>Thumbnail 1 label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem eveniet quasi ipsum tempora quaerat error porro! Reprehenderit, dolore, perspiciatis, rerum, delectus temporibus qui est saepe unde nihil necessitatibus perferendis in corrupti quo minima quos at culpa voluptatibus quibusdam a ull </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail"><img src="images/epicenter-1.jpg" alt="Thumbnail Image 1" width="300" height="254" class="image-fill img-rounded">
           <div class="caption">
             <h3>Epicenter - Interaction Design</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem eveniet quasi ipsum tempora quaerat error porro! Reprehenderit, dolore, perspiciatis, rerum, delectus temporibus qui est saepe unde nihil necessitatibus perferendis in corrupti quo minima quos at culpa voluptatibus quibusdam a ull </p>
@@ -84,7 +92,9 @@
         </div>
       </div>
     </div>
-</article>
+    
+	<div id="skills">Content for skills goes here</div>
+</div>
 <footer id="footer">&copy; Copyright YEBAI ZHAO	2016</footer>
 </div><!--END of the Main div-->
 <script src="js/jquery-1.11.3.min.js"></script>

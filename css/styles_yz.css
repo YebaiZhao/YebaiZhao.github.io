@@ -3,41 +3,65 @@ body{
 	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:large;
 }
-
-#headermain{
-	background-color:#e7e7e7;
-	color:#000000;
+#wrapper .navbar.navbar-default {
+	font-weight: bolder;
 }
-.navbar, .navbar-default{
+.navbar, .navbar-default{/*other links on navbar*/
+	padding: 3% 5% 0% 5%;
 	border-width: 0px;
-	background-color: #B8B8B8;
 	border-radius: 0px;
-	color: #FFFFFF;
+	margin-bottom: 0px;
+	background-color: #FFFFFF;
 }
+#headermain{ /*only the top left Yebai Zhao*/
+	color: #007DCD;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,  
+#headermain:hover, 
+.nav.navbar-nav .active a:hover{/*other links on navbar's hover*/
+	color: #0BD6FF;
+	background-color: white;
+}
+.nav.navbar-nav .active a{
+	color: #007DCD;
+	background-color: white;
+}
+
 
 #main {
 	width: 90%;
 	max-width: 991px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 60px;
-	margin-bottom: 60px;
+	margin-top: 3em;
+	margin-bottom: 3em;
 	text-align:center;
 }
+
+#headphoto{
+	width: 100%;
+	height: 5em;
+	text-align: center;
+	background-image: url(../images/whiteface_full.jpg);
+	background-size: 15em;
+
+}
+
 #footer {
 	margin-top: 60px;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	background-color: #383838;
-	color: #FFFFFF;
 	text-align: center;
+	font-size: small;
 }
 .image-fill {
 	width: 100%;
 }
 #wrapper {
-	padding-right: 0px;
-	padding-left: 0px;
+	padding: 0 0 0 0;
 }
-#wapper {
-}
+
+	
+

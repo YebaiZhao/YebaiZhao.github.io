@@ -13,14 +13,111 @@ body{
 	margin-bottom: 0px;
 	background-color: #FFFFFF;
 }
-#headermain{ /*only the top left Yebai Zhao*/
+/*twbscolor generated code//////////////////////////////////////////////*/
+.navbar-default {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.navbar-default .navbar-brand {
+  color: #545454;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #0BD6FF;
+}
+.navbar-default .navbar-text {
+  color: #545454;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #545454;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #0BD6FF;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #545454;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #0BD6FF;
+  background-color: #ffffff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #0BD6FF;
+  background-color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #0BD6FF;
+  background-color: #ffffff;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #0BD6FF;
+  background-color: #ffffff;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #545454;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #545454;
+}
+.navbar-default .navbar-link {
+  color: #545454;
+}
+.navbar-default .navbar-link:hover {
+  color: #0BD6FF;
+}
+.navbar-brand {
+	background-image: url(../images/icon_bgwt-day-01.svg);
+	background-repeat: no-repeat;
+	background-size: 50px auto;
+	padding-left: 60px;
+	color: #0BD6FF;
+}
+
+
+/*There is a problem with the YebaiZhao default color above*/
+
+#heroimage{
+	position: relative;
+}
+#heroimage h1 {
+	text-align: center;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;	
+}
+
+
+
+/*//////////////////////////////////////////////////////*/
+/*
+#headermain{ 
 	color: #007DCD;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus,  
 #headermain:hover, 
-.nav.navbar-nav .active a:hover{/*other links on navbar's hover*/
+.nav.navbar-nav .active a:hover{
 	color: #0BD6FF;
 	background-color: white;
 }
@@ -28,6 +125,7 @@ body{
 	color: #007DCD;
 	background-color: white;
 }
+*/
 
 
 #main {
@@ -40,14 +138,6 @@ body{
 	text-align:center;
 }
 
-#headphoto{
-	width: 100%;
-	height: 5em;
-	text-align: center;
-	background-image: url(../images/whiteface_full.jpg);
-	background-size: 15em;
-
-}
 
 #footer {
 	margin-top: 60px;
@@ -62,6 +152,57 @@ body{
 #wrapper {
 	padding: 0 0 0 0;
 }
+.thumbnail .caption h3 {
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-weight: bold;
+	font-size: large;
+}
 
-	
+.thumbnail a{
+	text-decoration: none;
+} 	
+.thumbnail a .caption:hover{
+	text-decoration: none;
+	color: #007DCD;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #545454;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #0BD6FF;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #0BD6FF;
+    background-color: #ffffff;
+  }
+ 
+#heroimage h1 {
+	font-size: 2em;
+}
+}
+
+
+@media (min-width:768px) and (max-height:1199px){
+#heroimage h1 {
+	font-size: 2.5 em;
+}
+}
+
+@media (min-width:1200px){
+	#heroimage h1 {
+	font-size: 3em;
+}
+}
 

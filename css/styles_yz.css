@@ -177,6 +177,11 @@ body{
 .row .col-lg-6 .squarePic {
 	width: 95%;
 }
+#main  .row  {
+	padding: 2%;
+	background-color: #F4F4F4;
+}
+
 
 
 

@@ -115,7 +115,7 @@ body{
 
 #main {
 	width: 90%;
-	max-width: 1199px;
+	max-width: 1250px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 3em;
@@ -140,6 +140,7 @@ body{
 
 #main .thumbnail a{
 	text-decoration: none;
+	font-size: small;
 } 	
 #main .thumbnail a h3:hover, #main .thumbnail a p:hover{
 	text-decoration: none;
@@ -147,6 +148,7 @@ body{
 }
 #main p {
 	font-size: 1.2em;
+	text-align: left;	
 }
 #footer {
 	margin-top: 60px;
@@ -158,29 +160,26 @@ body{
 .image-fill {
 	width: 100%;
 }
-
-#main .squareLeft {
-
-}
-#main .squareRight {
-
-}
 #main  h2  {
 	font-weight: bold;
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
-	font-size: 3em;
+	font-size: 2em;
 	color: #613FBB;
 }
 #main .projectHeader {
 	text-align: left;
 }
-.row .col-lg-6 .squarePic {
-	width: 95%;
-}
 #main  .row  {
 	padding: 2%;
 	background-color: #F4F4F4;
 }
+#main #articleStyle  {
+	text-align: left;
+}
+#articleStyle .aside {
+}
+
+
 
 
 
@@ -222,3 +221,5 @@ body{
 	font-size: 3em;
 }
 }
+
+

@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Yebai Zhao's personal site, past projects, portfolio, resume and more.">
-<title>Yebai - Homepage</title>
+<meta name="description" content="Yebai Zhao's personal website, past projects, portfolio, resume and more.">
+<title>Yebai Zhao - Homepage</title>
 <link rel="icon" href="images/icons/favicon.ico" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="css/styles_yz.css" rel="stylesheet" type="text/css">
@@ -30,10 +30,16 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="defaultNavbar1">
         <ul class="nav navbar-nav">
-          <li><a href="projects.html">Projects</a></li>
-          <!-- temp disabled
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="projects.html#airbeats">AirBeats</a></li>
+              <li><a href="projects.html#Usability Testing">Usability Testing</a></li>
+              <li><a href="projects.html#clock240">Clock240</a></li>
+              <li><a href="projects.html#Liquid Display">Liquid Display</a></li>
+              <li><a href="projects.html#epicenter">EpicCenter</a></li>
+            </ul>
+          </li>
           <li><a href="ideas.html">Ideas</a></li>
-          -->
           <li><a href="about.html">About me</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -56,8 +62,8 @@
       <h1>LEARN AND CREATE</h1>
       <img src="images/under construction.png" class="img-responsive" alt="welcome image"> </div>
   </div>
-  <section id="main">
-     <!-- NOT QUITE USEFULL 1X3 boxes....................
+  <section id="main"> 
+    <!-- NOT QUITE USEFULL 1X3 boxes....................
       <div class="container well">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-6">
@@ -88,10 +94,10 @@
         </div>
       </div>
 -->
-
+    
     <h2>Highlights</h2>
     <div class="row" id="highlightsbox">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="thumbnail"><a href="projects.html#clock240"><img class="img-responsive" src="images/thumbnails/clock240-thumb.jpg" alt="Clock240">
           <div class="caption">
             <h3>Project: Clock240</h3>
@@ -99,7 +105,7 @@
           </div>
           </a></div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="thumbnail"><a href="projects.html#epicenter"><img class="img-responsive" src="images/thumbnails/epicenter-thumb.jpg" alt="">
           <div class="caption">
             <h3>Epicenter - Interaction Design</h3>
@@ -107,7 +113,7 @@
           </div>
           </a></div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="thumbnail"><a href="projects.html#Liquid Display"><img class="img-responsive" src="images/thumbnails/ferro-thumb.jpg" alt="">
           <div class="caption">
             <h3>Liquid Display</h3>
@@ -115,15 +121,16 @@
           </div>
           </a></div>
       </div>
-      <div class="col-md-3">
+      <div class="clearfix visible-md-block"></div><!--This div is added to fixsome bootstrap flowing problem when brower width changed-->
+      <div class="col-md-4">
         <div class="thumbnail"> <a href="projects.html#Usability Testing"><img class="img-responsive" src="images/thumbnails/ut-thumb.jpg" alt="">
           <div class="caption">
             <h3>Usability Testing</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem eveniet quasi ipsum tempora </p>
+            <p>The centerpiece of User Experience researcher's skill bank. Instead of making assumptions, we make observations.</p>
           </div>
           </a></div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="thumbnail"> <a href="#"><img class="img-responsive" src="images/thumbnails/epicenter-thumb.jpg" alt="">
           <div class="caption">
             <h3>Usability Testing</h3>
@@ -131,14 +138,14 @@
           </div>
           </a></div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="thumbnail"> <a href="#"><img class="img-responsive" src="images/thumbnails/epicenter-thumb.jpg" alt="">
           <div class="caption">
             <h3>Usability Testing</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem eveniet quasi ipsum tempora </p>
           </div>
           </a></div>
-      </div>      
+      </div>
     </div>
   </section>
   <footer id="footer"> Handwritten Webpages by Yebai Zhao<br>

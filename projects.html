@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Yebai Zhao's personal page, past projects, portfolio, resume and more.">
+<meta name="description" content="Some of my past projects. Mostly from my RIT courses.">
 <title>Yebai - Projects</title>
 <link rel="icon" href="images/icons/favicon.ico" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
@@ -20,7 +20,9 @@
 
 <body>
 <div class="container-fluid" id="wrapper">
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default" data-spy="affix" data-offset-top="197"> 
+    <!--I currently plan only to float the nav bar in project.html 
+   The data-offset seems to be a strange way of keeping the "My projects" not fly under the navbar-->
     <div class="container-fluid"> 
       <!-- Brand and toggle get grouped for better mobile display -->
       
@@ -30,10 +32,16 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="defaultNavbar1">
         <ul class="nav navbar-nav">
-          <li><a href="projects.html">Projects</a></li>
-          <!-- temp disabled
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="projects.html#airbeats">AirBeats</a></li>
+              <li><a href="projects.html#Usability Testing">Usability Testing</a></li>
+              <li><a href="projects.html#clock240">Clock240</a></li>
+              <li><a href="projects.html#Liquid Display">Liquid Display</a></li>
+              <li><a href="projects.html#epicenter">EpicCenter</a></li>
+            </ul>
+          </li>
           <li><a href="ideas.html">Ideas</a></li>
-          -->
           <li><a href="about.html">About me</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -50,6 +58,7 @@
       <!-- /.navbar-collapse --> 
     </div>
     <!-- /.container-fluid --> 
+    
   </nav>
   <div class="container-fluid">
     <div class="row" id="heroimage">
@@ -57,12 +66,62 @@
       <img src="images/levelB.jpg" class="img-responsive" alt="welcome image"> </div>
   </div>
   <div id="main">
+    <section id="airbeats">
+      <div class="projectHeader">
+        <h2>AirBeats</h2>
+        <li>Team size: 5</li>
+        <li>My role: most of the hardware design & implication, electric system design, one of the two software implications.</li>
+        <p>This project came from our HCI with Mobile Devices course. In this secession, we discuss possibilities of how mobile computing can enhance everyday life, not only smartphones, but also wearables and ambient systems. As a practice, the AirBeats is to build a prototype for eyes-free music composition. It involves placement of various sensors on the body and generating music by sensing the interactions. During this project, our team exercised the design sequence of concept, blue map, implication and user study.</p>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-6"> <img class="img-responsive" src="images/projects/airbeats-concept.jpg" alt="The concept gloves"/> </div>
+        <div class="col-lg-6">
+          <h3>Concept</h3>
+          <p>We were interested in the idea of wearable music instrument at the beginning. After we studied some related projects such as <a href="http://www.ted.com/talks/onyx_ashanti_this_is_beatjazz"> BeatJazz</a> and <a href="http://www.instructables.com/id/SNF-Drumming-MIDI-Glove-using-Arduino-and-light-se/">DrumPants</a>, we imagine our project as a system helping a person recreating Beatboxing sound. But after several rounds of iteration, we found that using MIDI protocol is much more viable than other solutions. The goal changed to create a wearable system which a person can create and enjoy music on-the-go. We carefully considered how this person can keep making music creations without being interrupted in many scenarios, based on a persona of college students.</p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-6"> <img class="img-responsive" src="images/projects/airbeats-blueprint.jpg" alt=""/> </div>
+        <div class="col-lg-6">
+          <h3>Blue Map</h3>
+          <p>We chose Arduino Uno as the brain of our system, since we only need to transfer data locally. The Arduino provides great expansibility among all microcontrollers, and its community support is extremely strong. Then, we found the perfect Arduino for our project. The VS1053 encoding/decoding processor gives the Arduino full capability for MINI decoding and playback. A battery shield was also stacked to provide a mobile power source. At last, we selected the input sensor that is affordable, reliable and easy to control. Force-sensitive resistor was eventually selected to fulfill this task.</p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-6"> <img class="img-responsive" src="images/projects/airbeats-soft.jpg" alt="photo of the device"/> </div>
+        <div class="col-lg-6">
+          <h3>Software</h3>
+          <p>Essentially what we were trying to build is a MIDI controller and a MIDI synthesizer. With the VS1053 shield and the Uno, making a synthesizer was not a hard task. But the Arduino processor has very limited RAM and slow clock speed. We tried to add a recording capability by writing the received data to a MicroSD card, but the sample rate could hardly reach 50Hz. Meanwhile, we processed with an alternative solution of interpreting the control signal on a laptop using <a href= "https://www.image-line.com/flstudio/">Fruity loop</a> which enable much more awesome functions. The Arduino can transmit serial data through a USB to a laptop in real time. With several mouse clicks, DJ-style music is right in the corner. The only problem is that normally people don't walk with a running MacBook. In the end, we approached the design goals with both solution simultaneously. </p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-6"> <img class="img-responsive" src="images/projects/airbeats-hard.jpg" alt="photo of the device"/> </div>
+        <div class="col-lg-6">
+          <h3>Hardware</h3>
+          <p>Hands are the best partner to most music instruments. We believed that they are also optimal for making music on-the-go. We sewed four force resistors into a glove. By pinching four fingers against thumb or press them against thigh, clear analog signals can be sent to the A/D circuit. For the other arm, we prepared seven capacitive touch sensor pads on a textured fabric base. When each copper touching area was activated, a special programed function such as Mute, Vol Up, Switch Instrument can be triggered. To make wires more durable, we braided much of them together so they won’t become entangled around wearer’s arm.</p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+          <h3>User Study</h3>
+        </div>
+        <div class="col-lg-6">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/R728aU2h0_E" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+    <hr>
     <section id="clock240">
       <div class="projectHeader">
         <h2>Project Clock 240</h2>
         <li>Team size: 2</li>
         <li>Time length: 2 months</li>
-        <li>My roll: We discussed is concept from the sketch together, then I designed the mechanical system, including how should this machine rotate and reset itself. I made the source file for 3D printing and lase cutting. Then we assembled the clock together. My teammate oversaw the coding, tuning the system and lot of the artwork for the awesome looking. Month later I programmed the Web remote control and feedback interface for the <a href="https://www.rit.edu/imagine/">IMAGINE RIT</a> event.</li>
+        <li>My role: We discussed is concept from the sketch together, then I designed the mechanical system, including how should this machine rotate and reset itself. I made the source file for 3D printing and laser cutting. Then we assembled the clock together. My teammate oversaw the coding, tuning the system and lot of the artwork for the awesome looking. Month later I programmed the Web remote control and feedback interface for the <a href="https://www.rit.edu/imagine/">IMAGINE RIT</a> event.</li>
         <li>Keyword: IoT, smart home, Particle Photon, microcontroller, 3D printing, laser cutting, Web control interface </li>
         <br>
         <p>What will be a clock like in a smart home? Clock240 is a working prototype born from one of our visions. Laptop, tablet, smartphone and smartTV, almost every screen in the house shows the time now. It makes the importance of a wall clock is slowly fading out. To revalue this old friend, our Clock240 smart clock design makes the clock a central display for the family to read different types of information related to the house on a timely manner.</p>
@@ -101,14 +160,14 @@
           <p>We tried to use any premade part we have to save time and reach the goal. But some core components were designed in a unique shape. The 3D printer became the best choice to fast fabrication. Size of other components was measured for the reference and fitness. We also took the advantage of the 3D modeling application to preview, test and debug our mechanical design before the assembly. </p>
         </div>
       </div>
-	<br>
+      <br>
       <div class="row">
         <div class="col-lg-6"> <img class="img-responsive" src="images/projects/clock240-5.jpg" alt="The code screenshot"/> </div>
         <div class="col-lg-6">
           <h3>Coding and Final Show</h3>
           <p>Month after the physical structures was done, I put some time in rewriting the code with better readability, efficiency, reliability, and more features. Although the Particle Photon is a single threaded, it has many amazing internet functions that make it stands out from many Arduino-type systems. Applying some of these cloud computing features, I was able to build stable communications between the Clock240 and a web browser on any device. The clock can get time from the internet, receive moving instructions from a webpage, and give feedback. When we demonstrated our work in the <a href="https://www.rit.edu/imagine/">IMAGINE RIT</a> event, final user experience was satisfactory and complete, considering it was firstly developed as prototype. </p>
         </div>
-      </div>      
+      </div>
     </section>
     <hr>
     <section id="epicenter">
@@ -121,47 +180,49 @@
         <br>
         <p>The Epicenter project is an information and interaction design practice. The core objective of our client was to build an efficient, user-friendly training website for first responders. We conducted contextual inquiries to gather detailed user scenario information of target users like fireman, emergency medical technician and ski patroller. Then, we made affinity diagram to group up viable feature points we found from the interview. Based on these design features, we created web and mobile application prototypes for demonstration.</p>
       </div>
-        <div class="row">
-			<div class="col-lg-6">
-			  <h3>Contextual Inquiry </h3>
-			  <p>The reason of performing the contextual inquiry was not only to understand our users, but also the environment they use the Epicenter. First responders may take their training during work hours, and probably interrupted by alarms, rings and other distractions. Thus, letting them being able to save and resume the training was specially considered in the design.</p>
-			</div>
+      <div class="row">
+        <div class="col-lg-6">
+          <h3>Contextual Inquiry </h3>
+          <p>The reason of performing the contextual inquiry was not only to understand our users, but also the environment they use the Epicenter. First responders may take their training during work hours, and probably interrupted by alarms, rings and other distractions. Thus, letting them being able to save and resume the training was specially considered in the design.</p>
         </div>
-        <br>
-        <div class="row">
-			<div class="col-lg-6">
-			  <h3>Affinity Diagram</h3>
-			  <p>Contextual inquiries gave us hundreds of comments about how first responders use technology, as well as their anticipation of a modern training website. Our team wrote those features found from the interview down to sticky notes, and carefully organized them into hierarchy.</p>
-			</div>
-    		<div class="col-lg-6"> <img class="img-responsive" src="images/projects/epicenter-2.jpg" alt=""/> </div>      	
-	    </div>
-       <br>
-        <div class="row">
-			<div class="col-lg-6">
-			  <h3>Personas</h3>
-			  <p>We created seven user personas based on behavioral patterns we found. These findings also led us to define the persona’s characteristics and goals. Designated scenario stories were given to personas to better describe their personality, ability and duty.</p>
-			</div>
-    		<div class="col-lg-6"> <img class="img-responsive" src="images/projects/epicenter-3.jpg" alt=""/> </div>
-	    </div>
-       <br>
-        <div class="row">  
-			<div class="col-lg-6">
-			  <h3>Design</h3>
-			  <p>With only primitive website building skills (back then), we made a mockup website prototype on the Wix.com and an iOS application prototype on inVision.com, as the overall demonstration of our user study. In charge of the mobile app prototyping, I spent extra efforts on binding the required features and training content with the lightweight, easy-to-use mobile experience.</p>
-			</div>
-			<div class="col-lg-6"> <img class="img-responsive" src="images/projects/epicenter-4.jpg" alt=""/> </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+          <h3>Affinity Diagram</h3>
+          <p>Contextual inquiries gave us hundreds of comments about how first responders use technology, as well as their anticipation of a modern training website. Our team wrote those features found from the interview down to sticky notes, and carefully organized them into hierarchy.</p>
         </div>
-        <br>
+        <div class="col-lg-6"> <img class="img-responsive" src="images/projects/epicenter-2.jpg" alt="stick notes" title="A wall of sticky notes after we finished the work"/> </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+          <h3>Personas</h3>
+          <p>We created seven user personas based on behavioral patterns we found. These findings also led us to define the persona’s characteristics and goals. Designated scenario stories were given to personas to better describe their personality, ability and duty.</p>
+        </div>
+        <div class="col-lg-6"> <img src="images/projects/epicenter-3.jpg" alt="personas screenshot" class="img-responsive" title="Personas with photo, chart and skill points"/> </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-6">
+          <h3>Design</h3>
+          <p>With only primitive website building skills (back then), we made a mockup website prototype on the Wix.com and an iOS application prototype on inVision.com, as the overall demonstration of our user study. In charge of the mobile app prototyping, I spent extra efforts on binding the required features and training content with the lightweight, easy-to-use mobile experience.</p>
+        </div>
+        <div class="col-lg-6"> <img src="images/projects/epicenter-4.jpg" alt="" class="img-responsive" title="I was not quite happy with the final look of this web prototype our team made."/> </div>
+      </div>
+      <br>
+      <div>
+        <h3>The iOS Prototype in inVision.com</h3>
         <div>
-			<h3>The iOS Prototype Embedded</h3>
-			<div><iframe width="396" height="858" src="//invis.io/YQ32051RN" frameborder="0" allowfullscreen></iframe></div>
-		</div>      
+          <iframe width="396" height="858" src="//invis.io/YQ32051RN" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
     </section>
     <hr>
     <section id="Liquid Display">
       <div class="projectHeader">
         <h2>Liquid Display</h2>
-        <li>My Roll: In this team of two, I sketched up the concept of Ferrofluid, and was responsible all the hardware. including the moving mechanism, 3D printed parts, electric system, and container. My partner mainly worked on programming. We cooperated tightly in experimenting the container and final tuning.</li>
+        <li>My Role: In this team of two, I sketched up the concept of Ferrofluid, and was responsible all the hardware. including the moving mechanism, 3D printed parts, electric system, and container. My partner mainly worked on programming. We cooperated tightly in experimenting the container and final tuning.</li>
         <br>
         <p>This <em>ambient display</em> project aims for providing people information with minimum disturbance. Like a painting on the wall, it requires no attention unless you are interested. We love the beauty of Ferrofluid and its amazing nature of reacting to magnetic field while maintaining liquid. How about use it to display the due day from google calendar?</p>
         <div class="row">
@@ -201,23 +262,20 @@
         </div>
         <div class="col-lg-6"> <img class="img-responsive" src="images/projects/ferro-workingMech.jpg" alt="The wooden box opened"/> </div>
       </div>
-    </section>
-    <br>
+      <sup>Special thanks to the generous help given by Jascha Wilcox and <a href="http://hack.rit.edu/">RIT construct</a>. There is no way we can do this without your help.</sup> </section>
+    <hr>
     <section id="Usability Testing">
-      	<div class="projectHeader">
-			<h2>Usability Testing</h2>
-			<li>Team size: 5</li>
-			<li>Input: Kodak Moments Application (iOS), 10 test users</li>
-			<li>Output: Usability Testing Reports, Presentation, Video Recordings</li>
-			<li>My Roll: I pointed dozens of design imperfections in the heuristic evaluation stage. I designed the most of the surveys, including screener, pre-test and post-test questionnaires. I went through the main testing stage as observer and moderator. I reviewed all the video footages and cut them into highlights. We also cooperate closely in the entire session in report writing.</li>
-			<br>
-			<img class="img-responsive" src="images/projects/UT-1.png" alt="The flowchart of Usability Testing"/>
-			<br>
-			<p>Usability testing is one of the core skill of a HCI researcher. It’s a comprehensive evaluation of a product in the design cycle. In this case, our client appointed us to evaluate the Kodak Moments mobile application by both heuristic guidelines and through controlled user studies. After sever phase of the study by the plan, we submitted the usability testing report in high quality.</p>
-
-		</div>
+      <div class="projectHeader">
+        <h2>Usability Testing</h2>
+        <li>Team size: 5</li>
+        <li>Input: Kodak Moments Application (iOS), 10 test users</li>
+        <li>Output: Usability Testing Reports, Presentation, Video Recordings</li>
+        <li>My Role: I pointed dozens of design imperfections in the heuristic evaluation stage. I designed the most of the surveys, including screener, pre-test and post-test questionnaires. I went through the main testing stage as observer and moderator. I reviewed all the video footages and cut them into highlights. We also cooperate closely in the entire session in report writing.</li>
+        <br>
+        <img class="img-responsive" src="images/projects/UT-1.png" alt="The flowchart of Usability Testing"/> <br>
+        <p>Usability testing is one of the core skill of a HCI researcher. It’s a comprehensive evaluation of a product in the design cycle. In this case, our client appointed us to evaluate the Kodak Moments mobile application by both heuristic guidelines and through controlled user studies. After sever phase of the study by the plan, we submitted the usability testing report in high quality.</p>
+      </div>
       <br>
-      
       <div class="row">
         <div class="col-lg-6">
           <h3>Heuristic Evaluation</h3>
@@ -226,7 +284,6 @@
         <div class="col-lg-6"> <img class="img-responsive" src="images/projects/UT-2.jpg" alt="The list of problems"/> </div>
       </div>
       <br>
-      
       <div class="row">
         <div class="col-lg-6">
           <h3>Participants</h3>
@@ -235,26 +292,22 @@
         <div class="col-lg-6"> <img class="img-responsive" src="images/projects/UT-3.jpg" alt="Flyer"/> </div>
       </div>
       <br>
-      
       <div class="row">
         <div class="col-lg-6">
           <h3>Testing</h3>
-          <p>Ten participants were invited to conduct the study in our controlled testing lab. The lab was separated in to two room by a one-way mirror. Through the mirror and video recording equipment, we can observe the participant with minimum disturbance. Guided by our team member and usability testing instruments, they experienced the application, performed tasks in different scenarios, and conducted a short survey. Each session was monitored and video recorded under the consent of participant. During the session, we took notes and add highlights to the video footage was for further study.</p>
+          <p>Ten participants were invited to conduct the study in our controlled testing lab. The lab was separated into two room by a one-way mirror. Through the mirror and video recording equipment, we can observe the participant with minimum disturbance. Guided by our team member and usability testing instruments, they experienced the application, performed tasks in different scenarios, and conducted a short survey. Each session was monitored and video recorded under the consent of participant. During the session, we took notes and add highlights to the video footage was for further study.</p>
         </div>
         <div class="col-lg-6"> <img class="img-responsive" src="images/projects/UT-4.jpg" alt="In the observation romm"/> </div>
-      </div>      
+      </div>
       <br>
-      
       <div class="row">
         <div class="col-lg-6">
           <h3>Report</h3>
-          <p>A 28-page report was written as the overall evaluation to the product. From the direct observation and over six hours of video recording, we proposed tens of recommendations in three categories. Preference data related to different functions and designed features were evaluated and visualized. Qualitative feedbacks and comparison with similar apps were included as well. Moreover, we made an hour-long presentation to our client, the Kodak Alaris product management team. The finial evaluation was as complicated as any other real-world issues: users like the flat design, but puzzled by some over abstractions, they love some of the features while reject some other concepts. However, our client was very satisfied by the work we presented, as it clearly helped engineers to fix major usability issues of the application, and provided vital information for setting the direction of its future development.</p>
+          <p>A 28-page report was written as the overall evaluation to the product. From the direct observation and over six hours of video recording, we proposed tens of recommendations in three categories. Preference data related to different functions and designed features were evaluated and visualized. Qualitative feedbacks and comparison with similar apps were included as well. Moreover, we made an hour-long presentation to our client, the Kodak Alaris product management team. The final evaluation was as complicated as any other real-world issues: users like the flat design, but puzzled by some over abstractions, they love some of the features while reject some other concepts. However, our client was very satisfied by the work we presented, as it clearly helped engineers to fix major usability issues of the application, and provided vital information for setting the direction of its future development.</p>
         </div>
         <div class="col-lg-6"> <img class="img-responsive" src="images/projects/UT-5.jpg" alt="The wooden box opened"/> </div>
-      </div>        
-		<p>*Kodak Moments is the product of Kodak Alaris Inc. This research was supported by Kodak Alaris. Any personal and business information mentioned above cannot be shared or reused without notification to me and Kodak Alaris.</p>
-      
-    </section>
+      </div>
+      <sup>*Kodak Moments is the product of Kodak Alaris Inc. This research was supported by Kodak Alaris. Any personal and business information mentioned above cannot be shared or reused without notification to me and Kodak Alaris.</sup> </section>
   </div>
   <footer id="footer">&copy; Copyright YEBAI ZHAO	2017 </footer>
 </div>

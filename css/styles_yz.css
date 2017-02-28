@@ -139,7 +139,7 @@ body{
 	font-size: large;
 }
 #main p {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	text-align: left;	
 }
 
@@ -225,7 +225,6 @@ body{
 }
 
   .affix {
-      top: 50;
       width: 100%;
   }
   .affix + .container-fluid {

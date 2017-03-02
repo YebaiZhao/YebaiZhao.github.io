@@ -149,7 +149,14 @@ body{
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
-
+#main .thumbnail {
+	border-radius: 0px;
+	padding: 2px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 25px;
+}
 #main .thumbnail a{
 	text-decoration: none;
 	font-size: small;
@@ -172,9 +179,10 @@ body{
 #main .projectHeader {
 	text-align: left;
 }
-#main  .row  {
+#main .wborder {
 	padding: 2%;
-	background-color: #F4F4F4;
+	border: thin solid #F0F0F0;
+	
 }
 #main #articleStyle  {
 	text-align: left;
@@ -230,3 +238,5 @@ body{
   .affix + .container-fluid {
       padding-top: 70px;
   }
+
+

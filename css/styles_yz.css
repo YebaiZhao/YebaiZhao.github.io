@@ -126,7 +126,7 @@ body{
 #main h3 {
 	font-size: xx-large;
 }
-#main  h2  {
+#main h2  {
 	font-weight: bold;
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	font-size: 2em;
@@ -184,8 +184,17 @@ body{
 	border: thin solid #F0F0F0;
 	
 }
-#main #articleStyle  {
+/*Articles use Serif font*/
+#main #articleStyle,  #main #articheStyle h1, #main #articleStyle h2{
+	font-family:Georgia, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
 	text-align: left;
+	
+}
+#friends{
+	text-align: left;
+}
+#articleStyle .row #articleSide {
+	border: thin solid #F3F3F3;
 }
 
 
@@ -238,5 +247,3 @@ body{
   .affix + .container-fluid {
       padding-top: 70px;
   }
-
-

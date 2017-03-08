@@ -185,16 +185,13 @@ body{
 	
 }
 /*Articles use Serif font*/
-#main #articleStyle,  #main #articheStyle h1, #main #articleStyle h2{
+#main .articleStyle,  #main .articheStyle h1, #main .articleStyle h2{
 	font-family:Georgia, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
 	text-align: left;
 	
 }
 #friends{
 	text-align: left;
-}
-#articleStyle .row #articleSide {
-	border: thin solid #F3F3F3;
 }
 
 

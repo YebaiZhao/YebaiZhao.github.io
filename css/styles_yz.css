@@ -163,6 +163,7 @@ body{
 } 	
 #main .thumbnail a h3:hover, #main .thumbnail a p:hover{
 	text-decoration: none;
+	text-align: center;
 	color: #05a9e6;
 }
 #footer {
@@ -244,3 +245,4 @@ body{
   .affix + .container-fluid {
       padding-top: 70px;
   }
+

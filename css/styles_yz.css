@@ -187,7 +187,7 @@ body{
 }
 /*Articles use Serif font*/
 #main .articleStyle,  #main .articheStyle h1, #main .articleStyle h2{
-	font-family:Georgia, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
 	text-align: left;
 	
 }

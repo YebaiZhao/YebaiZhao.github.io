@@ -149,23 +149,31 @@ body{
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
-#main .thumbnail {
+
+#main #highlightsbox .thumbnail {
 	border-radius: 0px;
 	padding: 2px;
 	margin-top: 0px;
 	margin-left: 0px;
 	margin-right: 0px;
 	margin-bottom: 25px;
+	transition: 0.3s;
 }
-#main .thumbnail a{
+#main #highlightsbox .thumbnail:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#main #highlightsbox .thumbnail a{
 	text-decoration: none;
 	font-size: small;
 } 	
-#main .thumbnail a h3:hover, #main .thumbnail a p:hover{
+#main #highlightsbox .thumbnail a h3:hover, #main .thumbnail a p:hover{
 	text-decoration: none;
-	text-align: center;
 	color: #05a9e6;
 }
+#main #highlightsbox .thumbnail a .img-responsive {
+	width: 100%;
+}
+
 #footer {
 	margin-top: 60px;
 	padding-top: 30px;
@@ -194,12 +202,6 @@ body{
 #friends{
 	text-align: left;
 }
-
-
-
-
-
-
 
 
 

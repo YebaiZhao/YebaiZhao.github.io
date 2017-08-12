@@ -15,9 +15,75 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="js/crossLines3.js"></script>
+<script>
+// Global Scripts
+	darkBlue2.gotoAndPlay(18);</script> 
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("C755E69007FE1E469DC0883A964E34E8");
+	var lib=comp.getLibrary();
+	handleComplete({},comp);
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	exportRoot = new lib.crossLines3();
+	stage = new lib.Stage(canvas);
+	stage.addChild(exportRoot);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;		
+		}
+	}
+	makeResponsive(true,'both',true,1);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+
 </head>
 
-<body>
+<body onload="init();">
 <div>
   <div class="container-fluid" id="wrapper">
     <nav class="navbar navbar-default">
@@ -28,30 +94,18 @@
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
           <a href="index.html" class="navbar-brand">Yebai Zhao</a></div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="defaultNavbar1">
-          <ul class="nav navbar-nav">
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="projects.html#airbeats">AirBeats</a></li>
-                <li><a href="projects.html#Usability Testing">Usability Testing</a></li>
-                <li><a href="projects.html#clock240">Clock240</a></li>
-                <li><a href="projects.html#Liquid Display">Liquid Display</a></li>
-                <li><a href="projects.html#epicenter">EpicCenter</a></li>
-              </ul>
-            </li>
-            <li><a href="ideas.html">Ideas</a></li>
-            <li class="active"><a href="about.html">About me</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Others<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="files/Yebai_Resume.pdf">Download Resume</a></li>
-                <!--<li role="separator" class="divider"></li> -->
-                <li><a href="friends.html">Friendly Links</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+      <div class="collapse navbar-collapse" id="defaultNavbar1">
+        <ul class="nav navbar-nav">
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="ideas.html">Ideas</a></li>
+          <li class="active"><a href="#">About me</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+       	  <li><a href="files/Yebai_Resume.pdf">Resume</a></li>
+		  <li><a href="friends.html">Friendly links</a></li>
+        </ul>
+      </div>
         <!-- /.navbar-collapse --> 
       </div>
       <!-- /.container-fluid --> 
@@ -59,55 +113,55 @@
     <div class="container-fluid">
       <div class="row" id="heroimage">
         <h1>Hello, there</h1>
-        <img src="images/wave.jpg" class="img-responsive" alt="welcome image"> </div>
+        <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:3000px; height:800px">
+          <canvas id="canvas" width="3000" height="800" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+          <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:3000px; height:800px; position: absolute; left: 0px; top: 0px; display: block;"> </div>
+        </div>
+      </div>
     </div>
     <div id="main">
       <section id="resumeInAbout">
         <h3>My Resume</h3>
         <p>Click image below to open, please take the <a href="files/Yebai_Resume.pdf">PDF file</a> as the offical version.</p>
-        <a href="files/Yebai_Resume.pdf"> <img src="images/resume_cover.jpg" class="img-responsive" style="padding-right: 20%;padding-left: 20%" > </a> 
-      </section>
+        <a href="files/Yebai_Resume.pdf"> <img src="images/resume_cover.jpg" class="img-responsive" style="padding-right: 20%;padding-left: 20%" > </a> </section>
       <hr>
       <section class="articleStyle" id="monologue">
         <div class="row">
-          <h2>i</h2>
-          <li>I can be a programmer, I know Java, C++ and JS</li>
-          <li>I can be a UI designer, I know Ps, Ai and I draw sketches</li>
-          <li>I can be a UX researcher, I love interviewing people and fix usability problems.</li>
-          <li>I can be an information system technician with my undergrad degree.</li>
-          <li>I could be a photographer…</li>
+          <h2>ME</h2>
+          <li>I am a programmer, I know Java, C++ and JS</li>
+          <li>I am a UI designer, I know Ps, Ai and I draw sketches</li>
+          <li>I am a UX researcher, I love interviewing people and fix usability problems.</li>
+          <li>I am an information system technician with my undergrad degree.</li>
+          <li>I am a photography lover, a pet lover and more...</li>
           <p>The real question I have been searching for years has always been: How do I imagine my future career?</p>
           <p>Dan Bricklin, the father of the spreadsheet, summarized at the end of his <a href="https://www.ted.com/talks/dan_bricklin_meet_the_inventor_of_the_electronic_spreadsheet">TedTalk</a> which works as a beacon for we the followers:</p>
           <blockquote>“… that you, too, should take your unique backgrounds, skills and needs. And build prototypes to discover and work out the key problems.  And through that, change the world.” </blockquote>
           <p>When Dan Bricklin was Harvard Business School in 1979, he put his knowledge in computer science into a program helping him calculate his MBA homework. Years later, it evolved into the first spreadsheet program named VisiCalc on Apple II. VisiCalc revolutionized how people process numeral data and became the killer app that introduced personal computer to every corner of this world. Almost every innovation is born from the spark of fields collision, so is this story.</p>
           <p> I have a wide spread of interests, and I love crossovers. I spent my life in different subjects, cities, jobs and cultures. Yes, it has always been a pleasure to bring some new blood to somewhere new. My hands love holding screwdrivers, my nose loves the smell of solder, my ear loves the sound of motor and my eyes are sharp to colors and shapes, yet my brain is always open to the knowledge of the future. I can use my diverse experience to create many possibilities, but I usually known as a responsible, down to earth, ingenious and thoughtful man. </p>
-		  <p>Every motion is made possible by the difference in entropy*, every creation is made by the collision of thoughts. Many of my projects were focusing on combining digital world with physical world, I do programming and hardware prototyping at the same time. I also love user study which our team use systematic technique to complete the iteration design process. The HCI project also taught me many usability research tools such as interviewing, data collection, controlled experiment and data analysis. With these skills, I can gather information more efficiently in the design process, and implement them with my own hands. </p>
+          <p>Every motion is made possible by the difference in entropy*, every creation is made by the collision of thoughts. Many of my projects were focusing on combining digital world with physical world, I do programming and hardware prototyping at the same time. I also love user study which our team use systematic technique to complete the iteration design process. The HCI project also taught me many usability research tools such as interviewing, data collection, controlled experiment and data analysis. With these skills, I can gather information more efficiently in the design process, and implement them with my own hands. </p>
           <sup> *It’s one way to interpret the second law of thermodynamics.</sup> </div>
       </section>
       <hr>
       <section class="articleStyle" id="siteBuilding">
         <div class="row">
-            <h2>Building this Site</h2>
-            <div class="row">
-              <img src="images/about/siteBuilding.jpg" class="img-responsive">
-              <br>
-		    </div>
-           
-            <p>When I started building this website, I have little knowledge about HTML and CSS. I was better at JS from former projects involving inter-platform data transmitting. While there are many ready-to-use services like Wix.com and squarespace.com, and Adobe Muse allows you draw the page out, I picked the old name: Dreamweaver. This decision is made for several reasons:</p>
-            <li>I want to learn CSS from the bottom to the top.</li>
-            <li>I feel more comfortable to able to understand every part of my site, not borrowing templates and widgets from someone else.</li>
-            <li>I don’t see this website as simply a portfolio or a for job-finding tool. This website is the place where I respect my team and myself for all the accomplishments we’ve achieved. </li>
-			<li>I want all my text, image, shape and color unique from others.</li>
-            <li>I wish to keep this site to grow with me, so it should able to withstand the evolution of web design with simple but delightful visual style.</li>
-			<li>I want to keep the freedom of building webpage without any limitation or template</li>	
-            <p>Therefore, I spent more time in w3schools reading demo code and references than searching for templates. It's not I hate website looking awesome fashionable, but the content is always more important than style to me. Although I have been a designer for many years, I wish to keep the website as the vessel of my thoughts and words, here is what I did.</p>
-            <li>Except three paragraphs of descriptions are based on our old team report, I wrote all the project discerptions.</li>
-            <li>Every the pictures are made either by my friends or me.</li>
-            <li>Most the HTML handwritten, checked and optimized.</li>
-            <li>Unique CSS style with self-defined color theme other settings.</li>
-            <li>I became hell good at editing HTML in Dreamweaver.</li>	
-			<li>I chose GitHub Pages to host my site because I can make changes easily on local, and push them to the cloud when ready.</li>
-			<li>Google Analytics code was added to monitor user visiting behavior.</li>
+          <h2>Building this Site</h2>
+          <div class="row"> <img src="images/about/siteBuilding.jpg" class="img-responsive"> <br>
+          </div>
+          <p>When I started building this website, I have little knowledge about HTML and CSS. I was better at JS from former projects involving inter-platform data transmitting. While there are many ready-to-use services like Wix.com and squarespace.com, and Adobe Muse allows you draw the page out, I picked the old name: Dreamweaver. This decision is made for several reasons:</p>
+          <li>I want to learn CSS from the bottom to the top.</li>
+          <li>I feel more comfortable to able to understand every part of my site, not borrowing templates and widgets from someone else.</li>
+          <li>I don’t see this website as simply a portfolio or a for job-finding tool. This website is the place where I respect my team and myself for all the accomplishments we’ve achieved. </li>
+          <li>I want all my text, image, shape and color unique from others.</li>
+          <li>I wish to keep this site to grow with me, so it should able to withstand the evolution of web design with simple but delightful visual style.</li>
+          <li>I want to keep the freedom of building webpage without any limitation or template</li>
+          <p>Therefore, I spent more time in w3schools reading demo code and references than searching for templates. It's not I hate website looking awesome fashionable, but the content is always more important than style to me. Although I have been a designer for many years, I wish to keep the website as the vessel of my thoughts and words, here is what I did.</p>
+          <li>Except three paragraphs of descriptions are based on our old team report, I wrote all the project discerptions.</li>
+          <li>Every the pictures are made either by my friends or me.</li>
+          <li>Most the HTML handwritten, checked and optimized.</li>
+          <li>Unique CSS style with self-defined color theme other settings.</li>
+          <li>I became hell good at editing HTML in Dreamweaver.</li>
+          <li>I chose GitHub Pages to host my site because I can make changes easily on local, and push them to the cloud when ready.</li>
+          <li>Google Analytics code was added to monitor user visiting behavior.</li>
         </div>
       </section>
     </div>
@@ -116,6 +170,7 @@
 <footer id="footer">&copy; Copyright YEBAI ZHAO	2017</footer>
 <script src="js/jquery-1.11.3.min.js"></script> 
 <script src="js/bootstrap.js"></script> 
-<script src="js/googleAnalytics.js"></script>
+<script src="js/googleAnalytics.js"></script> 
+
 </body>
 </html>

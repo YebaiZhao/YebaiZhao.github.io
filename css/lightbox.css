@@ -152,6 +152,7 @@ img.hover-shadow {
 	max-width: 90% 
 }
 
+/*This contorls how many thumbs in a row at bottom*/
 .modal-content .column {
-	width: 20%;
+	width: 10%;
 }

@@ -31,27 +31,15 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="defaultNavbar1">
         <ul class="nav navbar-nav">
-          <li class="dropdown"><a href="projects.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="projects.html#airbeats">AirBeats</a></li>
-              <li><a href="projects.html#Usability Testing">Usability Testing</a></li>
-              <li><a href="projects.html#clock240">Clock240</a></li>
-              <li><a href="projects.html#Liquid Display">Liquid Display</a></li>
-              <li><a href="projects.html#epicenter">EpicCenter</a></li>
-            </ul>
-          </li>
+
+          <li><a href="projects.html">Projects</a></li>
           <li><a href="ideas.html">Ideas</a></li>
           <li><a href="about.html">About me</a></li>
-          <li clas="active"><a href="#">Gallery</a></li>
+          <li class="active"><a href="#">Gallery</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Others<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="files/Yebai_Resume.pdf">Download Resume</a></li>
-              <!--<li role="separator" class="divider"></li> -->
-              <li><a href="friends.html">Friendly Links</a></li>
-            </ul>
-          </li>
+       	  <li><a href="files/Yebai_Resume.pdf">Resume</a></li>
+			<li><a href="friends.html">Friendly links</a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse --> 
@@ -64,42 +52,52 @@
     </div>
   </div>
   <div id="main">
+   <!-- On the surface -->
     <div class="row">
       <div class="column"> <img src="images/gallery/Radical162_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow"> </div>
       <div class="column"> <img src="images/gallery/icon design_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow"> </div>
       <div class="column"> <img src="images/gallery/Fire hydrant_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow"> </div>
-      <div class="column"> <img src="images/gallery/Canola flower_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow"> </div>
+      <div class="column"> <img src="images/gallery/cat_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow"> </div>
     </div>
     <div class="row">
-      <div class="column"> <img src="images/gallery/IMG_8058_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow"> </div>
-      <div class="column"> <img src="images/gallery/railgun_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow"> </div>
-      <div class="column"> <img src="images/gallery/dusk_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow"> </div>
-      <div class="column"> <img src="images/gallery/Canola flower_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow"> </div>
+      <div class="column"> <img src="images/gallery/Still life_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow"> </div>
+      <div class="column"> <img src="images/gallery/IMG_8058_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow"> </div>
+      <div class="column"> <img src="images/gallery/Canola flower_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow"> </div>
+      <div class="column"> <img src="images/gallery/dusk_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow"> </div>
     </div>
-
+    <div class="row">
+      <div class="column"> <img src="images/gallery/railgun_400x400.jpg" style="width:100%" onclick="openModal();currentSlide(9)" class="hover-shadow"> </div>
+    </div>
+   <!-- In the black -->
       <div id="myModal" class="modal"> <span class="close cursor" onclick="closeModal()">&times;</span>
         <div class="modal-content">
           <div class="mySlides">
-            <div class="numbertext">1 / 7</div>
+            <div class="numbertext">1</div>
             <img src="images/gallery/Radical162_1600x1200.jpg" style="width:100%"> </div>
           <div class="mySlides">
-            <div class="numbertext">2 / 7</div>
+            <div class="numbertext">2</div>
             <img src="images/gallery/icon design_1800x1200.jpg" style="width:100%"> </div>
           <div class="mySlides">
-            <div class="numbertext">3 / 7</div>
+            <div class="numbertext">3</div>
             <img src="images/gallery/Fire hydrant_1600x1200.jpg" style="width:100%"> </div>
           <div class="mySlides">
-            <div class="numbertext">4 / 7</div>
+            <div class="numbertext">4</div>
+            <img src="images/gallery/cat_1200x1600.jpg" style="width:100%"> </div>
+          <div class="mySlides">
+            <div class="numbertext">5</div>
+            <img src="images/gallery/Still life_1200x1600.jpg" style="width:100%"> </div>
+          <div class="mySlides">
+            <div class="numbertext">6</div>
+            <img src="images/gallery/IMG_8058_1200x1600.jpg" style="width:100%"> </div>     
+		  <div class="mySlides">
+            <div class="numbertext">7</div>
             <img src="images/gallery/Canola flower_1200x1800.jpg" style="width:100%"> </div>
           <div class="mySlides">
-            <div class="numbertext">5 / 7</div>
-            <img src="images/gallery/IMG_8058_1200x1600.jpg" style="width:100%"> </div>
-          <div class="mySlides">
-            <div class="numbertext">6 / 7</div>
-            <img src="images/gallery/railgun_1600x1200.jpg" style="width:100%"> </div>     
-		  <div class="mySlides">
-            <div class="numbertext">7 / 7</div>
+            <div class="numbertext">8</div>
             <img src="images/gallery/dusk_1200x700.jpg" style="width:100%"> </div>
+          <div class="mySlides">
+            <div class="numbertext">9</div>
+            <img src="images/gallery/railgun_1600x1200.jpg" style="width:100%"> </div>
             
             
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -109,10 +107,12 @@
           <div class="column"> <img class="thumbs" src="images/gallery/Radical162_400x400.jpg" style="width:100%" onclick="currentSlide(1)" alt="Radical Project. Adobe Photoshop"> </div>
           <div class="column"> <img class="thumbs" src="images/gallery/icon design_400x400.jpg" style="width:100%" onclick="currentSlide(2)" alt="Site Icon Design. Adobe Illustrator"> </div>
           <div class="column"> <img class="thumbs" src="images/gallery/Fire hydrant_400x400.jpg" style="width:100%" onclick="currentSlide(3)" alt="Fire hydrant. Sketch with pencil"> </div>
-          <div class="column"> <img class="thumbs" src="images/gallery/Canola flower_400x400.jpg" style="width:100%" onclick="currentSlide(4)" alt="Canola flower. Photography"> </div>
-          <div class="column"> <img class="thumbs" src="images/gallery/IMG_8058_400x400.jpg" style="width:100%" onclick="currentSlide(5)" alt="Lights. Photography"> </div>
-          <div class="column"> <img class="thumbs" src="images/gallery/railgun_400x400.jpg" style="width:100%" onclick="currentSlide(6)" alt="Rail Trolleys. Static model with paint"> </div>
-          <div class="column"> <img class="thumbs" src="images/gallery/dusk_400x400.jpg" style="width:100%" onclick="currentSlide(7)" alt="Lovely Shot Before Sunset, w/ optical distortion "> </div>
+          <div class="column"> <img class="thumbs" src="images/gallery/cat_400x400.jpg" style="width:100%" onclick="currentSlide(4)" alt="A Cat. Sketch with pencil and charcoal"> </div>          
+          <div class="column"> <img class="thumbs" src="images/gallery/Still life_400x400.jpg" style="width:100%" onclick="currentSlide(5)" alt="Still Life. Sketch with pencil"> </div>
+          <div class="column"> <img class="thumbs" src="images/gallery/IMG_8058_400x400.jpg" style="width:100%" onclick="currentSlide(6)" alt="Lights. Photography"> </div>
+          <div class="column"> <img class="thumbs" src="images/gallery/Canola flower_400x400.jpg" style="width:100%" onclick="currentSlide(7)" alt="Canola flower. Photography"> </div>
+          <div class="column"> <img class="thumbs" src="images/gallery/dusk_400x400.jpg" style="width:100%" onclick="currentSlide(8)" alt="Lovely Shot Before Sunset, w/ optical distortion"> </div>
+          <div class="column"> <img class="thumbs" src="images/gallery/railgun_400x400.jpg" style="width:100%" onclick="currentSlide(9)" alt="Rail Trolleys. Static model with paint"> </div>
         </div>
       </div>
   </div>

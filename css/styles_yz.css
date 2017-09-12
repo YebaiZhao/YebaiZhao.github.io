@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body{
-	font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Gotham, Arial, sans-serif;
 	font-size:large;
 	font-weight: 300;
 }
@@ -111,8 +111,7 @@ body{
 }
 #heroimage h1 {
 	text-align: center;
-	font-family: 'Libre Barcode 39 Text','Raleway', Verdana, sans-serif;	
-	font-size: 5em;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;	
 }
 
 
@@ -131,13 +130,14 @@ body{
 }
 #main h2  {
 	font-weight: bold;
-	font-family: 'Raleway', Verdana, sans-serif;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	font-size: 2em;
-	color: #007DCD;
+	color: #613FBB;
 }
 #main .caption h3 {
-	font-family: 'Raleway', Verdana, sans-serif;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	font-weight: bold;
+	color: #007DCD;
 	font-size: 1.8em;
 }
 #main p {
@@ -197,7 +197,7 @@ body{
 }
 /*Articles use Serif font*/
 #main .articleStyle,  #main .articheStyle h1, #main .articleStyle h2{
-	font-family: 'Raleway', Verdana, "sans-serif";
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
 	text-align: left;
 	
 }

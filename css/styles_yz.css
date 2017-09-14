@@ -112,7 +112,6 @@ body{
 #heroimage h1 {
 	text-align: center;
 	font-family: 'Libre Barcode 39 Text','Raleway', Verdana, sans-serif;	
-	font-size: 5em;
 }
 
 
@@ -226,14 +225,14 @@ body{
   }
  
 #heroimage h1 {
-	font-size: 2em;
+	font-size: 3em;
 }
 }
 
 
 @media (min-width:768px) and (max-height:1199px){
 #heroimage h1 {
-	font-size: 2.5 em;
+	font-size: 4em;
 }
 	
 	.nav.navbar-nav.navbar-right a {
@@ -242,8 +241,8 @@ body{
 }
 
 @media (min-width:1200px){
-	#heroimage h1 {
-	font-size: 3em;
+#heroimage h1 {
+	font-size: 5em;
 }
 .nav.navbar-nav.navbar-right a {
 	font-size: 0.8em;
